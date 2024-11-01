@@ -1,13 +1,10 @@
 import "./styles/App.css";
-import { Alert } from "./components/ui/alert";
+import LoginLayout from "./components/templates/LoginLayout";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
-      <h1 className="text-3xl font-bold underline">Hello world!</h1>
-      <Alert title="Alert Title">This is the alert description</Alert>
+      <LoginLayout />
     </div>
   );
 }
-
-export default App;
