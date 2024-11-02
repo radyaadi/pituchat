@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* main {
   background-color: #ffffff;
   color: #000000;
-}
+} */
 
 body {
   margin: 0;
@@ -14,6 +14,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #ffffff;
+  color: #000000;
 }
 
 code {

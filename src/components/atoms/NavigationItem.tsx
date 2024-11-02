@@ -23,8 +23,8 @@ export default function NavigationItem({
       }`}
     >
       <span
-        className={`absolute left-0 top-0 h-full w-1 rounded-full ${
-          Boolean(match) ? "bg-blue-500" : "bg-transparent"
+        className={`absolute left-0 top-0 h-full w-[3.5px] rounded-full ${
+          Boolean(match) ? "bg-[#0C4AC0]" : "bg-transparent"
         }`}
       />
       <div className="flex flex-col items-center justify-center bg-transparent">

@@ -10,6 +10,7 @@ import reportWebVitals from "./reportWebVitals";
 import "./styles/index.css";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
+import ShopLayout from "./components/templates/ShopLayout";
 
 const router = createBrowserRouter([
   {
@@ -30,7 +31,7 @@ const router = createBrowserRouter([
       },
       {
         path: "toko",
-        element: <p>Toko Layout</p>,
+        element: <ShopLayout />,
       },
     ],
   },
