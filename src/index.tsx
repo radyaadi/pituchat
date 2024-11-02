@@ -11,6 +11,7 @@ import "./styles/index.css";
 import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import ShopLayout from "./components/templates/ShopLayout";
+import ChatLayout from "./components/templates/ChatLayout";
 
 const router = createBrowserRouter([
   {
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
       },
       {
         path: "chat",
-        element: <p>Chat Layout</p>,
+        element: <ChatLayout />,
       },
       {
         path: "toko",
