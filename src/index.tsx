@@ -1,34 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
-import reportWebVitals from "./reportWebVitals";
+import {
+  createBrowserRouter,
+  Navigate,
+  Outlet,
+  RouterProvider,
+} from "react-router-dom";
 import { Provider } from "./components/ui/provider";
-import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import MainPage from "./pages/MainPage";
 import "./styles/index.css";
+import LoginLayout from "./components/templates/LoginLayout";
 
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <App />,
+    element: <LoginLayout />,
   },
   {
     path: "/",
     element: (
-      <div>
-        <p>Main Content Layout</p>
+      <MainPage>
         <Outlet />
-      </div>
+      </MainPage>
     ),
-    // children: [
-    //   {
-    //     path: "chat",
-    //     element: <p>Chat Layout</p>,
-    //   },
-    //   {
-    //     path: "toko",
-    //     element: <p>Toko Layout</p>,
-    //   },
-    // ],
+    children: [
+      {
+        path: "/", // Redirect from the root path
+        element: <Navigate to="/chat" replace />, // Redirect to /chat
+      },
+      {
+        path: "chat",
+        element: <p>Chat Layout</p>,
+      },
+      {
+        path: "toko",
+        element: <p>Toko Layout</p>,
+      },
+    ],
   },
 ]);
 

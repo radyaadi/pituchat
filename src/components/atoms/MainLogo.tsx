@@ -9,7 +9,7 @@ export default function MainLogo({
   text?: string;
 }) {
   return (
-    <div className="inline-flex items-center gap-x-2">
+    <div className="inline-flex items-center gap-x-1">
       <Image h={size} w={size} fit="contain" src={mainLogo} />
       {text && <p className="text-lg font-medium uppercase">{text}</p>}
     </div>

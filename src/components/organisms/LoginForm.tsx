@@ -1,11 +1,19 @@
-import MainLogo from "../atoms/MainLogo";
+import { useNavigate } from "react-router-dom";
 import AuthInputField from "../molecules/AuthInputField";
+import MainLogo from "../atoms/MainLogo";
 import Icon from "../atoms/Icon";
+import Button from "../atoms/Button";
 import mail from "../../assets/icon/mail.svg";
 import lock from "../../assets/icon/lock.svg";
-import Button from "../atoms/Button";
 
 export default function LoginForm() {
+  const navigate = useNavigate();
+
+  const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    navigate("/chat");
+  };
+
   return (
     <section className="flex flex-1 items-center justify-center">
       <div className="flex w-11/12 flex-col gap-y-9 p-5 md:w-2/3 xl:w-7/12">
@@ -16,7 +24,7 @@ export default function LoginForm() {
             Masuk akun untuk Menggunakan PituChat
           </p>
         </div>
-        <form className="w-full space-y-7">
+        <form className="w-full space-y-7" onSubmit={handleLogin}>
           <AuthInputField
             label="email"
             id="email"
