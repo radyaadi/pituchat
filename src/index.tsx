@@ -3,31 +3,26 @@ import ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   Navigate,
-  Outlet,
   RouterProvider,
 } from "react-router-dom";
 import { Provider } from "./components/ui/provider";
 import reportWebVitals from "./reportWebVitals";
-import MainPage from "./pages/MainPage";
 import "./styles/index.css";
-import LoginLayout from "./components/templates/LoginLayout";
+import LoginPage from "./pages/LoginPage";
+import MainPage from "./pages/MainPage";
 
 const router = createBrowserRouter([
   {
     path: "/login",
-    element: <LoginLayout />,
+    element: <LoginPage />,
   },
   {
     path: "/",
-    element: (
-      <MainPage>
-        <Outlet />
-      </MainPage>
-    ),
+    element: <MainPage />,
     children: [
       {
-        path: "/", // Redirect from the root path
-        element: <Navigate to="/chat" replace />, // Redirect to /chat
+        path: "/",
+        element: <Navigate to="/login" replace />,
       },
       {
         path: "chat",

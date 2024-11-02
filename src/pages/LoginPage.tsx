@@ -1,7 +1,12 @@
-export default function LoginPage({ children }: { children: React.ReactNode }) {
+import LoginLayout from "../components/templates/LoginLayout";
+import LoginForm from "../components/organisms/LoginForm";
+import BgImage from "../components/atoms/BgImage";
+
+export default function LoginPage() {
   return (
-    <main>
-      <div className="flex min-h-screen w-full flex-row">{children}</div>
-    </main>
+    <LoginLayout>
+      <BgImage />
+      <LoginForm />
+    </LoginLayout>
   );
 }

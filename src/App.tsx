@@ -1,5 +1,5 @@
 import "./styles/App.css";
-import LoginLayout from "./components/templates/LoginLayout";
+import LoginLayout from "./pages/LoginPage";
 
 export default function App() {
   return (
