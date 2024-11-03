@@ -12,6 +12,7 @@ import LoginPage from "./pages/LoginPage";
 import MainPage from "./pages/MainPage";
 import ShopLayout from "./components/templates/ShopLayout";
 import ChatLayout from "./components/templates/ChatLayout";
+import { ChatProvider } from "./contexts/chat-context";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +46,9 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider>
-      <RouterProvider router={router} />
+      <ChatProvider>
+        <RouterProvider router={router} />
+      </ChatProvider>
     </Provider>
   </React.StrictMode>,
 );

@@ -18,7 +18,7 @@ export default function ChatListHead() {
               <Icon size="22px" src={Slider} />
             </Button>
           </MenuTrigger>
-          <MenuContent className="mr-[-1.55rem] flex w-60 flex-col justify-start rounded-lg bg-white p-2 shadow-md">
+          <MenuContent className="mr-[-1.55rem] flex w-60 flex-col justify-start rounded-lg bg-white px-3 shadow-md">
             <CheckBox name={"Shopee"} type={"Beauty Lovers"} />
             <MenuSeparator />
             <CheckBox name={"Shopee"} type={"Makeupucino"} />
@@ -26,6 +26,10 @@ export default function ChatListHead() {
             <CheckBox name={"Tokopeida"} type={"Beauty Lovers"} />
             <MenuSeparator />
             <CheckBox name={"Tokopeida"} type={"Makeupucino"} />
+            <MenuSeparator />
+            <p className="p-2 text-[.825rem] font-medium text-[#0C4AC0]">
+              Pilih semua
+            </p>
           </MenuContent>
         </MenuRoot>
       </div>

@@ -5,12 +5,15 @@ import Icon from "../atoms/Icon";
 import Button from "../atoms/Button";
 import mail from "../../assets/icon/mail.svg";
 import lock from "../../assets/icon/lock.svg";
+import { useChat } from "../../contexts/chat-context";
 
 export default function LoginForm() {
+  const { setSelectedChat } = useChat();
   const navigate = useNavigate();
 
   const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setSelectedChat("");
     navigate("/chat");
   };
 

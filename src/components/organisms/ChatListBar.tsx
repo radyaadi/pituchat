@@ -1,12 +1,35 @@
 import { Tabs } from "@chakra-ui/react";
 import ChatListHead from "../molecules/ChatListHead";
 import ChatItem from "../molecules/ChatItem";
+import { useChat } from "../../contexts/chat-context";
+import { ChatProps, MessagesProps } from "../../constants/contactChatList";
 
-export default function ChatListBar() {
+export default function ChatListBar({ data }: { data: ChatProps[] }) {
+  const { selectedChat, setSelectedChat } = useChat();
+
+  const chatListData = data.map((chat: ChatProps) => {
+    const lastMessage = chat.messages[chat.messages.length - 1]?.text;
+    const countUnreadMessages = chat.messages.filter(
+      (text: MessagesProps) => !text.isRead,
+    ).length;
+    return {
+      id: chat.id,
+      sender: chat.sender,
+      avatar: chat.avatar,
+      brand: chat.brand,
+      createAt: chat.createAt,
+      countUnreadMessages: countUnreadMessages,
+      lastMessage: lastMessage,
+    };
+  });
+
+  const onChatSelectionChanged = (value: string) => {
+    setSelectedChat(value);
+  };
+
   return (
-    <div className="sticky top-20 h-[calc(100vh-5rem)] max-w-[400px] basis-[400px] bg-white">
+    <div className="max-w-[400px] basis-[400px] bg-white">
       <ChatListHead />
-
       <Tabs.Root
         defaultValue="unreplied"
         justify="center"
@@ -26,22 +49,23 @@ export default function ChatListBar() {
           value="unreplied"
           className="max-h-[calc(100vh-13rem)] overflow-y-auto p-0"
         >
-          <ChatItem
-            name={"Penggemar Pitu Chat"}
-            lastMessage={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus."
-            }
-            countUnreadMessagge={3}
-            isSelected={true}
-          />
-          <ChatItem
-            name={"Penggemar Pitu Chat"}
-            lastMessage={
-              "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, repellendus."
-            }
-            countUnreadMessagge={3}
-            isSelected={false}
-          />
+          {chatListData.map((chat: any) => (
+            <div
+              key={chat.id}
+              onClick={() => onChatSelectionChanged(chat.id)}
+              className="cursor-pointer"
+            >
+              <ChatItem
+                sender={chat.sender}
+                avatar={chat.avatar}
+                createAt={chat.createAt}
+                brand={chat.brand}
+                lastMessage={chat.lastMessage}
+                countUnreadMessagge={chat.countUnreadMessages}
+                isSelected={selectedChat === chat.id}
+              />
+            </div>
+          ))}
         </Tabs.Content>
       </Tabs.Root>
     </div>

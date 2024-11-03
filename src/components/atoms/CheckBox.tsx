@@ -6,7 +6,7 @@ export default function CheckBox({
   type: string;
 }) {
   return (
-    <div className="flex items-center gap-x-2 bg-white p-3">
+    <div className="flex items-center gap-x-2 bg-white p-2">
       <input
         type="checkbox"
         id={name}
