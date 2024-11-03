@@ -23,14 +23,14 @@ export default function ProfileBarSection({
 
   return (
     <div
-      className={`${isSidebarOpen ? "block" : "hidden"} flex basis-72 flex-col items-center gap-y-10 bg-white px-5 py-20 transition-transform duration-300`}
+      className={`${isSidebarOpen ? "block" : "hidden"} flex basis-72 flex-col items-center gap-y-10 border-l bg-white px-5 py-20 shadow-sm transition-transform duration-300`}
     >
-      <button
-        className="absolute right-4 top-4 rounded bg-gray-200 p-2"
+      <div
+        className="absolute right-4 top-6 rounded p-2"
         onClick={onToggleSidebar}
       >
-        <Icon size={"20px"} src={Close} />
-      </button>
+        <Icon size={"22px"} src={Close} />
+      </div>
       <Avatar
         name={userChat?.sender}
         src={userChat?.avatar}
@@ -59,7 +59,7 @@ export default function ProfileBarSection({
           <p className="text-xs">{userChat?.brand.type}</p>
         </span>
       </div>
-      <div className="flex flex-col gap-y-3">
+      <div className="flex flex-col gap-y-3 self-start">
         <h1 className="font-medium">About Conversation</h1>
         <span className="inline-flex gap-x-5 text-sm">
           <p className="font-medium">Created</p>
