@@ -43,7 +43,7 @@ export default function ChatListBar({ data }: { data: ChatProps[] }) {
         <Tabs.List className="border-b-2">
           <Tabs.Trigger value="unreplied">
             Perlu balas{" "}
-            <Circle size="5" className="bg-[#0C4AC0] text-white">
+            <Circle size="4" className="text-md bg-[#0C4AC0] text-white">
               {totalUnreadContacts}
             </Circle>
           </Tabs.Trigger>

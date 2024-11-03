@@ -17,7 +17,7 @@ export default function ChatWindow({
   );
 
   return (
-    <section className="flex h-[calc(100vh-5rem)] w-full flex-col">
+    <section className="flex h-[calc(100vh-5rem)] w-full min-w-[40rem] flex-col">
       <ChatWindowTopBar
         sender={userChat?.sender || ""}
         onToggleSidebar={onToggleSidebar}

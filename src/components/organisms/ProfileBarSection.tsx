@@ -23,10 +23,10 @@ export default function ProfileBarSection({
 
   return (
     <div
-      className={`${isSidebarOpen ? "block" : "hidden"} flex basis-72 flex-col items-center gap-y-10 border-l bg-white px-5 py-20 shadow-sm transition-transform duration-300`}
+      className={`${isSidebarOpen ? "block" : "hidden"} relative flex min-w-72 basis-72 flex-col items-center gap-y-10 border-l bg-white px-5 py-20 shadow-sm transition-transform duration-300`}
     >
       <div
-        className="absolute right-4 top-6 rounded p-2"
+        className="absolute right-4 top-6 cursor-pointer rounded p-2"
         onClick={onToggleSidebar}
       >
         <Icon size={"22px"} src={Close} />

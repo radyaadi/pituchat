@@ -15,7 +15,7 @@ export default function ChatLayout() {
   };
 
   return (
-    <section className="sticky top-20 flex h-[calc(100vh-5rem)] overflow-hidden">
+    <section className="sticky top-20 flex h-[calc(100vh-5rem)] overflow-hidden overflow-x-auto">
       <ChatListBar data={contactChatList} />
       <div className="flex flex-1 bg-[#F9F9FA]">
         {selectedChat ? (
