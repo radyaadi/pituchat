@@ -6,9 +6,11 @@ import MessageList from "../molecules/MessageList";
 export default function ChatWindow({
   chats,
   chatId,
+  onToggleSidebar,
 }: {
   chats: ChatProps[];
   chatId: string;
+  onToggleSidebar: () => void;
 }) {
   const userChat: ChatProps | undefined = chats.find(
     (chat: ChatProps) => chat.id === chatId,
@@ -16,7 +18,10 @@ export default function ChatWindow({
 
   return (
     <section className="flex h-[calc(100vh-5rem)] w-full flex-col">
-      <ChatWindowTopBar sender={userChat?.sender || ""} />
+      <ChatWindowTopBar
+        sender={userChat?.sender || ""}
+        onToggleSidebar={onToggleSidebar}
+      />
       {userChat ? (
         <MessageList userChat={userChat} />
       ) : (
