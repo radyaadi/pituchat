@@ -1,4 +1,4 @@
-import { Tabs } from "@chakra-ui/react";
+import { Circle, Tabs } from "@chakra-ui/react";
 import ChatListHead from "../molecules/ChatListHead";
 import ChatItem from "../molecules/ChatItem";
 import { useChat } from "../../contexts/chat-context";
@@ -23,6 +23,10 @@ export default function ChatListBar({ data }: { data: ChatProps[] }) {
     };
   });
 
+  const totalUnreadContacts = data.filter((chat: ChatProps) =>
+    chat.messages.some((message: MessagesProps) => !message.isRead),
+  ).length;
+
   const onChatSelectionChanged = (value: string) => {
     setSelectedChat(value);
   };
@@ -37,7 +41,12 @@ export default function ChatListBar({ data }: { data: ChatProps[] }) {
         colorPalette="blue"
       >
         <Tabs.List className="border-b-2">
-          <Tabs.Trigger value="unreplied">Perlu balas</Tabs.Trigger>
+          <Tabs.Trigger value="unreplied">
+            Perlu balas{" "}
+            <Circle size="5" className="bg-[#0C4AC0] text-white">
+              {totalUnreadContacts}
+            </Circle>
+          </Tabs.Trigger>
           <Tabs.Trigger value="replied" disabled>
             Terbalas
           </Tabs.Trigger>
