@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Search from "../../assets/icon/search.svg.svg";
+import Search from "../../assets/icon/search.svg";
 import { Button } from "../ui/button";
 import Icon from "../atoms/Icon";
 

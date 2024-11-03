@@ -28,7 +28,7 @@ export default function ChatListBar({ data }: { data: ChatProps[] }) {
   };
 
   return (
-    <div className="max-w-[400px] basis-[400px] bg-white">
+    <div className="max-w-[400px] basis-[400px] border-r bg-white">
       <ChatListHead />
       <Tabs.Root
         defaultValue="unreplied"

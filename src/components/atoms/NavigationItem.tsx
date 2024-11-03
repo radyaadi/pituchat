@@ -27,7 +27,7 @@ export default function NavigationItem({
           Boolean(match) ? "bg-[#0C4AC0]" : "bg-transparent"
         }`}
       />
-      <div className="flex flex-col items-center justify-center bg-transparent">
+      <div className="flex flex-col items-center justify-center gap-y-2 bg-transparent">
         {Boolean(match) ? activeIcon : icon}
         <p className="bg-transparent font-semibold text-[#0C4AC0]">{name}</p>
       </div>
